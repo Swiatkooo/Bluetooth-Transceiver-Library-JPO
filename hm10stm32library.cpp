@@ -11,6 +11,14 @@ js::BLE_Transceiver::BLE_Transceiver()
 		rxBuffer = new uint8_t[rxBufferSize];
 }
 
+js::BLE_Transceiver::BLE_Transceiver(UART_HandleTypeDef * a, GPIO_TypeDef * b, uint16_t c)
+{
+		rxBufferSize = 200;
+		rxTimeout = 100;
+		rxBuffer = new uint8_t[rxBufferSize];
+		init(a,b,c);
+}
+
 js::BLE_Transceiver::~BLE_Transceiver()
 {
 		delete[] rxBuffer;

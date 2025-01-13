@@ -16,6 +16,7 @@ namespace js
 			uint16_t rxTimeout;
 		public:
 			BLE_Transceiver();
+			BLE_Transceiver(UART_HandleTypeDef *, GPIO_TypeDef *, uint16_t);
 			~BLE_Transceiver();
 			void init(UART_HandleTypeDef *, GPIO_TypeDef *, uint16_t);
 			bool isConnectedToRemoteDevice();
